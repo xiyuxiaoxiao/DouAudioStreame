@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C263F6F41B5D3D66004D5D35 /* MusicDownLoadTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C263F6F31B5D3D66004D5D35 /* MusicDownLoadTool.m */; };
 		C2C55E381B4E96A1007EEF76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C55E371B4E96A1007EEF76 /* main.m */; };
 		C2C55E3B1B4E96A1007EEF76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C55E3A1B4E96A1007EEF76 /* AppDelegate.m */; };
 		C2C55E411B4E96A1007EEF76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2C55E3F1B4E96A1007EEF76 /* Main.storyboard */; };
@@ -95,6 +96,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C263F6F21B5D3D66004D5D35 /* MusicDownLoadTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDownLoadTool.h; sourceTree = "<group>"; };
+		C263F6F31B5D3D66004D5D35 /* MusicDownLoadTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDownLoadTool.m; sourceTree = "<group>"; };
 		C2C55E321B4E96A1007EEF76 /* X6音乐流媒体.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "X6音乐流媒体.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C55E361B4E96A1007EEF76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2C55E371B4E96A1007EEF76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -490,6 +493,8 @@
 			children = (
 				C2C55E961B4E9B86007EEF76 /* WYJAudioFile.h */,
 				C2C55E971B4E9B86007EEF76 /* WYJAudioFile.m */,
+				C263F6F21B5D3D66004D5D35 /* MusicDownLoadTool.h */,
+				C263F6F31B5D3D66004D5D35 /* MusicDownLoadTool.m */,
 			);
 			name = audioTool;
 			sourceTree = "<group>";
@@ -788,6 +793,7 @@
 				C2C884211B4FEEEE00B77D22 /* UIImage+GIF.m in Sources */,
 				C2C8841C1B4FEEEE00B77D22 /* SDWebImageDownloader.m in Sources */,
 				C2C884401B501D8300B77D22 /* AudioController.m in Sources */,
+				C263F6F41B5D3D66004D5D35 /* MusicDownLoadTool.m in Sources */,
 				C2C55E871B4E96BD007EEF76 /* DOUAudioEventLoop.m in Sources */,
 				C2C55E941B4E96BD007EEF76 /* DOUSimpleHTTPRequest.m in Sources */,
 				C2C55E881B4E96BD007EEF76 /* DOUAudioFilePreprocessor.m in Sources */,
