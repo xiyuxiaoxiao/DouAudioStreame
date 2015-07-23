@@ -64,7 +64,6 @@
 		C2C884261B4FEEEE00B77D22 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C884161B4FEEEE00B77D22 /* UIView+WebCacheOperation.m */; };
 		C2C8842A1B4FF55500B77D22 /* musicModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C884281B4FF55500B77D22 /* musicModelCell.m */; };
 		C2C8842B1B4FF55500B77D22 /* musicModelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C884291B4FF55500B77D22 /* musicModelCell.xib */; };
-		C2C884311B50001200B77D22 /* RoundImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C884301B50001200B77D22 /* RoundImageView.m */; };
 		C2C884371B50073800B77D22 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C884361B50073800B77D22 /* RootViewController.m */; };
 		C2C884401B501D8300B77D22 /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C8843E1B501D8300B77D22 /* AudioController.m */; };
 		C2C884411B501D8300B77D22 /* AudioController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C8843F1B501D8300B77D22 /* AudioController.xib */; };
@@ -208,8 +207,6 @@
 		C2C884271B4FF55500B77D22 /* musicModelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = musicModelCell.h; sourceTree = "<group>"; };
 		C2C884281B4FF55500B77D22 /* musicModelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = musicModelCell.m; sourceTree = "<group>"; };
 		C2C884291B4FF55500B77D22 /* musicModelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = musicModelCell.xib; sourceTree = "<group>"; };
-		C2C8842F1B50001200B77D22 /* RoundImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundImageView.h; sourceTree = "<group>"; };
-		C2C884301B50001200B77D22 /* RoundImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundImageView.m; sourceTree = "<group>"; };
 		C2C884351B50073800B77D22 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		C2C884361B50073800B77D22 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		C2C8843D1B501D8300B77D22 /* AudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
@@ -279,8 +276,6 @@
 				C2C884271B4FF55500B77D22 /* musicModelCell.h */,
 				C2C884281B4FF55500B77D22 /* musicModelCell.m */,
 				C2C884291B4FF55500B77D22 /* musicModelCell.xib */,
-				C2C8842F1B50001200B77D22 /* RoundImageView.h */,
-				C2C884301B50001200B77D22 /* RoundImageView.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -778,7 +773,6 @@
 				C2C55E931B4E96BD007EEF76 /* DOUMPMediaLibraryAssetLoader.m in Sources */,
 				C2C55E861B4E96BD007EEF76 /* DOUAudioDecoder.m in Sources */,
 				C2C55E841B4E96BD007EEF76 /* DOUAudioAnalyzer+Default.m in Sources */,
-				C2C884311B50001200B77D22 /* RoundImageView.m in Sources */,
 				C2C883EA1B4FE0BD00B77D22 /* MusicStreamerController.m in Sources */,
 				C2C884221B4FEEEE00B77D22 /* UIImage+MultiFormat.m in Sources */,
 				C2CDB6121B5113B700FDCE70 /* UIView+Extension.m in Sources */,

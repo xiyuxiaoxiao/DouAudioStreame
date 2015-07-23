@@ -30,11 +30,16 @@
 
 -(void)downLoad
 {
-    NSURL *url = [NSURL URLWithString:self.model.songLink];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    
+    NSString *songID = [[self.model.songLink componentsSeparatedByString:@"?"] firstObject];
+    
+    NSString *address = [NSString stringWithFormat:@"%@?xcode=%@",songID,self.model.xcode];
+
+    NSURL *url = [NSURL URLWithString:address];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
     
-    NSString *range = [NSString stringWithFormat:@"%lld",_current];
+    NSString *range = [NSString stringWithFormat:@"bytes:%lld",_current];
     
     [request setValue:range forHTTPHeaderField:@"Range"];
     
@@ -53,34 +58,32 @@
     _total = [response expectedContentLength];
     
     NSString *caches = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
-    NSLog(@"%@",caches);
-    
     
     //创建文件
-    
     NSFileManager *manage = [NSFileManager defaultManager];
     
     NSString *filePath = [caches stringByAppendingString:@"/localMusic"];
-    [manage createFileAtPath:filePath contents:nil attributes:nil];
+    [manage createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:nil];
     
-    NSString *musicFile = [filePath stringByAppendingString:[NSString stringWithFormat:@"%@.mp3",self.model.songName]];
+    NSString *musicFile = [filePath stringByAppendingString:[NSString stringWithFormat:@"/%@.mp3",self.model.songName]];
     [manage createFileAtPath:musicFile contents:nil attributes:nil];
+    NSLog(@"%@",musicFile);
     
     self.fileHandle = [NSFileHandle fileHandleForWritingAtPath:musicFile];
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    
     //总共下载的大小
     _current += data.length;
-    NSLog(@"%f", (double)_current / _total);
-    
+
     //指向文件最末尾处
     [self.fileHandle seekToEndOfFile];;
     
     //向文件中写数据
     [self.fileHandle writeData:data];
+  
+    [self performSelectorOnMainThread:@selector(updateProgress) withObject:nil waitUntilDone:YES];
 }
 
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
@@ -94,4 +97,8 @@
     NSLog(@"错误");
 }
 
+-(void)updateProgress
+{
+    self.block((double)_current / _total);
+}
 @end

@@ -26,5 +26,6 @@
 @property(copy,nonatomic)NSString *songPicRadio;
 @property(copy,nonatomic)NSString *songPicSmall;
 
+@property(copy,nonatomic)NSString *xcode;
 @property(strong,nonatomic)WYJAudioFile *audioFile;
 @end

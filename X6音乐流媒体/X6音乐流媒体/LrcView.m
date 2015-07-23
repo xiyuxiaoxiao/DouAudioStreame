@@ -45,7 +45,6 @@
     UITableView *tableView = [[UITableView alloc] init];
     
     tableView.backgroundColor = [UIColor clearColor];
-//    tableView.backgroundColor = [UIColor colorWithHue:0 saturation:0 brightness:0 alpha:0.6];
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.delegate = self;
     tableView.dataSource = self;

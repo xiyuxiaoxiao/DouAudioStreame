@@ -10,10 +10,10 @@
 #import <objc/message.h>
 
 @implementation UIImage (MJ)
-+ (instancetype)circleImageWithName:(NSString *)name borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor
++ (instancetype)circleImageWithName:(UIImage *)image borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor
 {
     // 1.加载原图
-    UIImage *oldImage = [UIImage imageNamed:name];
+    UIImage *oldImage = image;
     
     // 2.开启上下文
     CGFloat imageW = oldImage.size.width + 2 * borderWidth;

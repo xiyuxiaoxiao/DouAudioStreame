@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIImage+MJ.h"
+
 @interface musicModelCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *headerImageView;

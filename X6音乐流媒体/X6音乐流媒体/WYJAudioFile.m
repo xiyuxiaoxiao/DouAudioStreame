@@ -20,6 +20,7 @@
     self = [super init];
     if (self) {
         self.url = [NSURL URLWithString:urlString];
+        NSLog(@"request:%@",urlString);
     }
     return self;
 }

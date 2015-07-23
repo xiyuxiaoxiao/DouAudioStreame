@@ -11,8 +11,8 @@
 #import "MusicModel.h"
 #import "UIImageView+WebCache.h"
 #import "musicModelCell.h"
-
 #import "AudioController.h"
+
 @interface MusicStreamerController ()<NetWorkDelegate,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *textField;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -102,9 +102,9 @@
     MusicModel *model = self.modelArray[indexPath.row];
     cell.songLabel.text = model.song;
     cell.singerLabel.text = model.singer;
-    
-    [cell.headerImageView sd_setImageWithURL:[NSURL URLWithString:model.albumPicSmall] placeholderImage:nil options:SDWebImageRetryFailed];
 
+    [cell.headerImageView sd_setImageWithURL:[NSURL URLWithString:model.albumPicSmall] placeholderImage:[UIImage imageNamed:@"palyingmusic@2x.png"] options:SDWebImageRetryFailed];
+    
     return cell;
 }
 

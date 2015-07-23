@@ -21,11 +21,18 @@
 
 #import "UIImageView+WebCache.h"
 #import "AlertViewAutoDismiss.h"
+
+#import "MusicDownLoadTool.h"
 #define StreamerStatus @"status"
 #define StreamerCurrentTime @"currentTime"
 #define StreamerBufferingRatio @"bufferingRatio"
 
 @interface AudioController ()<NetWorkDelegate>
+
+{
+    double _progress;
+}
+
 @property(strong,nonatomic)DOUAudioStreamer *streamer;
 @property(strong,nonatomic)NSMutableDictionary *modelDict;
 
@@ -58,6 +65,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *buttonVolume;
 @property(assign,nonatomic)BOOL isSingleLoop;
 
+@property (strong, nonatomic) IBOutlet UIProgressView *downLoadProgress;
+
 @end
 
 @implementation AudioController
@@ -84,6 +93,7 @@
     [self.sliderVolume setThumbImage:[UIImage imageNamed:@"huakuai.png"] forState:UIControlStateHighlighted];
     [self.sliderVolume setThumbImage:[UIImage imageNamed:@"huakuai.png"] forState:UIControlStateNormal];
     
+    self.downLoadProgress.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -373,7 +383,7 @@
         
         MusicDetailModel *detailModel = [[MusicDetailModel alloc] init];
         [detailModel setValuesForKeysWithDictionary:dict];
-        
+        detailModel.xcode = [data objectForKey:@"xcode"];
 /*
          model作为key需要实现copy协议(如果把model作为key，字典没法判断model类型的key值相等)；
          所以改用model的一个属性 song_id 作为key
@@ -389,9 +399,7 @@
         NSLog(@"%@",address);
         
         detailModel.audioFile = [[WYJAudioFile alloc] initWithURL:address];
-        
-        
-        
+       
         [self updateCurrentMusicDetailModel];
         //播放
         [self play];
@@ -465,13 +473,14 @@
 
 //播放
 -(void)play{
+    
     [self.streamer play];
     
     //设置歌词图片
     [self setLrcAndImage];
+    
 }
 - (void)pause {
-    NSLog(@"%f",_streamer.volume);
     [_streamer pause];
 }
 - (IBAction)stop:(UIButton *)sender {
@@ -565,6 +574,22 @@
         [alert show];
     }
 }
+
+#pragma mark 下载
+- (IBAction)downLoad:(UIButton *)sender {
+    
+    self.downLoadProgress.progress = 0;
+    self.downLoadProgress.hidden = NO;
+    
+    MusicDownLoadTool *downTool = [[MusicDownLoadTool alloc] init];
+    downTool.model = self.currentMusicDetailModel;
+    
+    downTool.block = ^(double pro){
+        self.downLoadProgress.progress = pro;
+    };
+    [downTool downLoad];
+}
+
 
 
 @end
